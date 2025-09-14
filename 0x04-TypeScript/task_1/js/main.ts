@@ -19,9 +19,9 @@ interface printTeacherFunction {
 }
 
 // Function that prints teacher in format "J. Doe"
-const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName[0]}. ${lastName}`;
-};
+}
 
 // Interface for StudentClass constructor
 interface StudentConstructor {
@@ -35,7 +35,7 @@ interface StudentClassInterface {
 }
 
 // StudentClass implementation
-class StudentClass implements StudentClassInterface {
+class StudentClass {
   firstName: string;
   lastName: string;
 
