@@ -43,8 +43,8 @@ class Teacher implements TeacherInterface {
 }
 
 // Function to create either Director or Teacher based on salary
-function createEmployee(salary: number | string): Director | Teacher {
-  if (Number(salary) < 500) {
+function createEmployee(salary: number): Director | Teacher {
+  if (salary < 500) {
     return new Teacher();
   }
   return new Director();
@@ -78,9 +78,9 @@ function teachClass(todayClass: Subjects): string {
 }
 
 // Example usage:
+
 console.log(createEmployee(200)); // Teacher
 console.log(createEmployee(1000)); // Director
-console.log(createEmployee('$500')); // Director
 
 const employee1 = createEmployee(200);
 const employee2 = createEmployee(1000);
