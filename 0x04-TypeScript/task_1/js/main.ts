@@ -15,13 +15,13 @@ interface Director extends Teacher {
 
 // Function interface for printTeacher
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  (params: { firstName: string; lastName: string }): string;
 }
 
 // Function that prints teacher in format "J. Doe"
-function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName[0]}. ${lastName}`;
-}
+const printTeacher: printTeacherFunction = ({ firstName, lastName }) => {
+  return `${firstName}. ${lastName}`;
+};
 
 // Interface for StudentClass constructor
 interface StudentConstructor {
@@ -74,7 +74,8 @@ const director1: Director = {
 
 console.log(director1);
 
-console.log(printTeacher("John", "Doe")); // J. Doe
+
+console.log(printTeacher({ firstName: "J", lastName: "Doe" })); // J. Doe
 
 const student = new StudentClass("Jane", "Smith");
 console.log(student.displayName()); // Jane
